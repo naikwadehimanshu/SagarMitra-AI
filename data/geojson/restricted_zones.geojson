@@ -1,0 +1,107 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Naval Base Karwar Restricted Zone",
+        "type": "naval",
+        "restriction_level": "prohibited",
+        "reason": "Military installation",
+        "source": "Indian Navy"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [74.12, 14.78],
+            [74.12, 14.70],
+            [74.05, 14.70],
+            [74.05, 14.78],
+            [74.12, 14.78]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mumbai Port Approach Channel",
+        "type": "port",
+        "restriction_level": "caution",
+        "reason": "High traffic commercial shipping lane",
+        "source": "Mumbai Port Trust"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [72.82, 18.90],
+          [72.75, 18.85],
+          [72.65, 18.80]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gulf of Mannar Marine National Park",
+        "type": "ecological",
+        "restriction_level": "warning",
+        "reason": "Protected marine ecosystem",
+        "source": "Ministry of Environment"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [79.20, 9.20],
+            [79.30, 9.10],
+            [79.10, 8.90],
+            [78.90, 9.00],
+            [79.20, 9.20]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sundarbans Reserved Forest Waterways",
+        "type": "ecological",
+        "restriction_level": "warning",
+        "reason": "Tiger reserve and sensitive ecosystem",
+        "source": "Forest Department"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [88.50, 21.80],
+            [89.00, 21.80],
+            [89.00, 21.50],
+            [88.50, 21.50],
+            [88.50, 21.80]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "India-Sri Lanka IMBL (Palk Strait)",
+        "type": "international_boundary",
+        "restriction_level": "prohibited",
+        "reason": "International Maritime Boundary Line. Crossing prohibited.",
+        "source": "Coast Guard"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [79.50, 10.00],
+          [79.70, 9.80],
+          [79.90, 9.50]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+    {"name": "Mumbai", "state": "Maharashtra", "lat": 19.076, "lon": 72.877, "type": "city"},
+    {"name": "Ratnagiri", "state": "Maharashtra", "lat": 16.994, "lon": 73.300, "type": "port"},
+    {"name": "Sindhudurg", "state": "Maharashtra", "lat": 16.349, "lon": 73.536, "type": "fishing_village"},
+    {"name": "Porbandar", "state": "Gujarat", "lat": 21.642, "lon": 69.609, "type": "port"},
+    {"name": "Veraval", "state": "Gujarat", "lat": 20.907, "lon": 70.367, "type": "fishing_village"},
+    {"name": "Dwarka", "state": "Gujarat", "lat": 22.238, "lon": 68.968, "type": "city"},
+    {"name": "Kochi", "state": "Kerala", "lat": 9.931, "lon": 76.267, "type": "port"},
+    {"name": "Thiruvananthapuram", "state": "Kerala", "lat": 8.524, "lon": 76.936, "type": "city"},
+    {"name": "Kozhikode", "state": "Kerala", "lat": 11.259, "lon": 75.780, "type": "city"},
+    {"name": "Chennai", "state": "Tamil Nadu", "lat": 13.083, "lon": 80.270, "type": "city"},
+    {"name": "Rameswaram", "state": "Tamil Nadu", "lat": 9.288, "lon": 79.313, "type": "fishing_village"},
+    {"name": "Tuticorin", "state": "Tamil Nadu", "lat": 8.764, "lon": 78.135, "type": "port"},
+    {"name": "Visakhapatnam", "state": "Andhra Pradesh", "lat": 17.687, "lon": 83.218, "type": "port"},
+    {"name": "Machilipatnam", "state": "Andhra Pradesh", "lat": 16.187, "lon": 81.138, "type": "fishing_village"},
+    {"name": "Paradip", "state": "Odisha", "lat": 20.316, "lon": 86.611, "type": "port"},
+    {"name": "Puri", "state": "Odisha", "lat": 19.798, "lon": 85.825, "type": "city"},
+    {"name": "Digha", "state": "West Bengal", "lat": 21.628, "lon": 87.551, "type": "fishing_village"},
+    {"name": "Haldia", "state": "West Bengal", "lat": 22.025, "lon": 88.063, "type": "port"},
+    {"name": "Panaji", "state": "Goa", "lat": 15.491, "lon": 73.827, "type": "city"},
+    {"name": "Vasco", "state": "Goa", "lat": 15.398, "lon": 73.812, "type": "port"}
+]
