@@ -15,7 +15,7 @@ export function PFZWidget() {
     <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl font-bold text-white">Nearby Fishing Zones</h3>
-        <a href="/marine" className="text-xs text-cyan-400 hover:underline">View Map</a>
+        <a href="/dashboard/intelligence" className="text-xs text-cyan-400 hover:underline">View Map</a>
       </div>
       
       <div className="space-y-4">

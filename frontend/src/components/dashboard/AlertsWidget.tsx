@@ -15,7 +15,7 @@ export function AlertsWidget() {
     <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl font-bold text-white">Active Alerts</h3>
-        <a href="/safety" className="text-xs text-cyan-400 hover:underline">View All</a>
+        <a href="/dashboard/safety" className="text-xs text-cyan-400 hover:underline">View All</a>
       </div>
       <div className="space-y-3 max-h-64 overflow-y-auto pr-2">
         {DUMMY_ALERTS.map((alert, idx) => (

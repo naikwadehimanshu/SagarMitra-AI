@@ -5,11 +5,12 @@ import { motion } from 'framer-motion';
 interface GlassCardProps {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   hover?: boolean;
   onClick?: () => void;
 }
 
-export function GlassCard({ children, className, hover = false, onClick }: GlassCardProps) {
+export function GlassCard({ children, className, style, hover = false, onClick }: GlassCardProps) {
   const baseStyles = 'bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 transition-all duration-300';
   
   if (onClick || hover) {
@@ -18,6 +19,7 @@ export function GlassCard({ children, className, hover = false, onClick }: Glass
         whileHover={hover ? { scale: 1.02, backgroundColor: 'rgba(255,255,255,0.08)' } : {}}
         whileTap={onClick ? { scale: 0.98 } : {}}
         className={cn(baseStyles, (onClick || hover) && 'cursor-pointer', className)}
+        style={style}
         onClick={onClick}
       >
         {children}
@@ -26,7 +28,7 @@ export function GlassCard({ children, className, hover = false, onClick }: Glass
   }
 
   return (
-    <div className={cn(baseStyles, className)}>
+    <div className={cn(baseStyles, className)} style={style}>
       {children}
     </div>
   );

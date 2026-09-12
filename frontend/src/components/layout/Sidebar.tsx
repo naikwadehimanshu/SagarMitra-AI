@@ -47,7 +47,7 @@ export function Sidebar() {
       
       <div className="px-6 py-4 mt-auto hidden md:block">
         <div className="bg-marine/50 p-4 rounded-xl border border-white/5 text-xs text-slate-400">
-          <p>SagarMitra AI Core</p>
+          <p>Navik AI Core</p>
           <p className="mt-1">v1.0.0-beta</p>
         </div>
       </div>

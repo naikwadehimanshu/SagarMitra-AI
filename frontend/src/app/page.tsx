@@ -38,7 +38,7 @@ export default function LandingPage() {
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
             <span className="inline-block mr-4">🌊</span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-600">
-              SagarMitra AI
+              Navik AI
             </span>
           </h1>
           
