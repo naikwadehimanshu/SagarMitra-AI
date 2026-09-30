@@ -20,3 +20,4 @@ aiosqlite
 orjson
 xarray
 netcdf4
+google-generativeai

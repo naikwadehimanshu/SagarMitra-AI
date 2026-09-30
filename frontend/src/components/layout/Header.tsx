@@ -15,7 +15,8 @@ export function Header() {
       <div className="flex items-center gap-3">
         <span className="text-2xl">🌊</span>
         <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 hidden md:block">
-          Navik AI
+          ORCA
+          <span className="text-xs font-normal text-slate-400 block -mt-1">Marine EcOsystem Reasoning with Collaborative Agents</span>
         </h1>
         <div className="ml-4 flex items-center gap-2 bg-green-500/10 px-2 py-1 rounded-full border border-green-500/20">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />

@@ -51,15 +51,23 @@ class DemoDataProvider:
         for loc_name, loc_data in self.locations.items():
             num_zones = random.randint(3, 6)
             for _ in range(num_zones):
-                # Offset by 10-40km roughly (0.1 to 0.4 degrees)
                 lat_offset = random.uniform(0.1, 0.4) * random.choice([1, -1])
-                lon_offset = random.uniform(0.1, 0.4) * random.choice([1, -1])
+                
+                # Push points into the ocean based on coast
+                lon_offset = random.uniform(0.1, 0.5)
+                if loc_data["state"] in ["Gujarat", "Maharashtra", "Goa", "Karnataka", "Kerala"]:
+                    # West coast - push west (negative longitude)
+                    lon_offset = -lon_offset
+                else:
+                    # East coast - push east (positive longitude)
+                    lon_offset = lon_offset
                 
                 zones.append(PFZZone(
                     id=str(uuid.uuid4()),
                     name=f"PFZ near {loc_name}",
                     latitude=loc_data["lat"] + lat_offset,
                     longitude=loc_data["lon"] + lon_offset,
+                    radius_km=random.uniform(5.0, 15.0),
                     timestamp=datetime.now(timezone.utc),
                     confidence=random.uniform(0.7, 0.95),
                     source="INCOIS_DEMO",

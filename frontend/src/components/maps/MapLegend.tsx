@@ -34,13 +34,19 @@ export function MapLegend() {
               <div className="flex items-center gap-2"><span className="w-4 h-4 rounded-full bg-green-600 flex items-center justify-center border border-white text-[10px]">⚓</span> Port</div>
             )}
             {activeLayers.has('fishing_zone') && (
-              <div className="flex items-center gap-2"><span className="w-4 h-4 rounded-full bg-cyan-500 flex items-center justify-center border border-white text-[10px]">🐟</span> Potential Fishing Zone</div>
+              <>
+                <div className="flex items-center gap-2"><span className="w-4 h-4 rounded-full bg-cyan-500 flex items-center justify-center border border-white text-[10px]">🐟</span> PFZ (Chlorophyll-Based)</div>
+                <div className="flex items-center gap-2 text-xs text-slate-400">Blue: Low • Green: Med • Yellow/Red: High</div>
+              </>
             )}
             {activeLayers.has('temperature') && (
               <div className="flex items-center gap-2"><span className="w-4 h-4 rounded-full bg-red-400 flex items-center justify-center border border-white text-[10px]">🌡</span> High Temp Area</div>
             )}
             {activeLayers.has('weather') && (
               <div className="flex items-center gap-2"><span className="w-4 h-4 rounded-full bg-blue-400 flex items-center justify-center border border-white text-[10px]">🌪</span> Weather / Storm</div>
+            )}
+            {activeLayers.has('wind') && (
+              <div className="flex items-center gap-2"><span className="w-4 h-4 rounded-full bg-lightblue-400 flex items-center justify-center border border-white text-[10px]">💨</span> Wind Particles</div>
             )}
             {activeLayers.has('hazard') && (
               <div className="flex items-center gap-2"><span className="w-4 h-4 rounded-full bg-amber-500 flex items-center justify-center border border-white text-[10px]">⚠️</span> Hazard Area</div>

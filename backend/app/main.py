@@ -1,4 +1,4 @@
-"""SagarMitra AI — FastAPI Main Application.
+"""ORCA — FastAPI Main Application.
 
 Marine Intelligence & Decision Support Platform.
 """
@@ -20,11 +20,11 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
 )
-logger = logging.getLogger("sagarmitra")
+logger = logging.getLogger("orca")
 
 # Create FastAPI app
 app = FastAPI(
-    title="SagarMitra AI API",
+    title="ORCA API",
     description=(
         "Agentic AI-powered Marine Intelligence & Decision Support Platform. "
         "Multi-agent system for PFZ discovery, marine safety assessment, "
@@ -57,7 +57,7 @@ app.include_router(layers_router, prefix="/api")
 @app.on_event("startup")
 async def startup_event():
     """Initialize data sources and preload demo data on startup."""
-    logger.info("🌊 SagarMitra AI starting up...")
+    logger.info("🌊 ORCA starting up...")
     try:
         from app.data_sources.demo_data import DemoDataProvider
         provider = DemoDataProvider()
@@ -65,7 +65,7 @@ async def startup_event():
     except Exception as e:
         logger.warning("⚠️ Demo data initialization warning: %s", e)
 
-    logger.info("🚀 SagarMitra AI API ready at http://localhost:8000")
+    logger.info("🚀 ORCA API ready at http://localhost:8000")
     logger.info("📖 API docs at http://localhost:8000/docs")
 
 
@@ -80,7 +80,7 @@ async def health_check():
     """Health check endpoint."""
     return {
         "status": "healthy",
-        "service": "SagarMitra AI",
+        "service": "ORCA",
         "version": "1.0.0",
         "mode": "demo",
     }

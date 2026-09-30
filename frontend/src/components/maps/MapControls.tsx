@@ -11,6 +11,7 @@ const CONTROLS: { id: LayerType; label: string; icon: any; color: string }[] = [
   { id: 'fishing_zone', label: 'PFZ Zones', icon: Fish, color: 'text-cyan-400' },
   { id: 'temperature', label: 'SST Layer', icon: Thermometer, color: 'text-red-400' },
   { id: 'weather', label: 'Weather', icon: Wind, color: 'text-blue-400' },
+  { id: 'wind', label: 'Wind Particles', icon: Wind, color: 'text-lightblue-400' },
   { id: 'hazard', label: 'Hazards', icon: AlertTriangle, color: 'text-amber-400' },
   { id: 'port', label: 'Ports', icon: MapIcon, color: 'text-green-400' },
 ];

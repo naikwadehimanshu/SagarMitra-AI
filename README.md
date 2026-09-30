@@ -1,4 +1,4 @@
-# SagarMitra AI 🌊
+# ORCA 🌊
 ### "Ask the Ocean. Understand the Risk. Navigate Smarter."
 
 An Agentic AI-powered Marine Intelligence & Decision Support Platform built for the Smart India Hackathon.

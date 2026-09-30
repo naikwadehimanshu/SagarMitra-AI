@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Navik AI",
+  title: "ORCA",
   description: "Agentic AI-powered Marine Intelligence & Decision Support Platform",
 };
 

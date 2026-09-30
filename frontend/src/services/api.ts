@@ -128,7 +128,7 @@ class ApiService {
   }
 
   async getMapLayers(lat: number, lon: number): Promise<MapLayer[] | null> {
-    return this.fetchWithTimeout(`${API_BASE_URL}/api/map-layers?lat=${lat}&lon=${lon}`);
+    return this.fetchWithTimeout(`${API_BASE_URL}/api/layers?lat=${lat}&lon=${lon}`);
   }
 
   async getDataSources(): Promise<any[] | null> {

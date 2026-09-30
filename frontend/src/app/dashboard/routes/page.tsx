@@ -6,6 +6,16 @@ import { RouteComparison } from '@/components/routes/RouteComparison';
 import { Toggle } from '@/components/ui/Toggle';
 import { Select } from '@/components/ui/Select';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+const MapView = dynamic(() => import('@/components/maps/MapView'), { 
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-marine flex items-center justify-center">
+      <div className="text-cyan-500 animate-pulse">Loading Map...</div>
+    </div>
+  )
+});
 
 const CITIES = [
   { value: 'mumbai', label: 'Mumbai' }, { value: 'kochi', label: 'Kochi' }, 
@@ -32,7 +42,7 @@ export default function RoutePlannerPage() {
   ];
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto h-[calc(100vh-8rem)] flex flex-col">
+    <div className="space-y-6 max-w-7xl mx-auto h-full overflow-y-auto p-4 md:p-8 pb-24 custom-scrollbar w-full flex flex-col">
       <h1 className="text-3xl font-bold flex items-center gap-3">
         <Compass className="text-cyan-400" size={32} />
         Route Planner
@@ -71,26 +81,26 @@ export default function RoutePlannerPage() {
         {/* Right Panel - Results & Map */}
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 lg:col-span-3 flex flex-col overflow-y-auto">
           {!calculated && !calculating ? (
-            <div className="flex-1 flex flex-col items-center justify-center text-white/40">
+            <div className="flex-1 flex flex-col items-center justify-center text-white/40 min-h-[300px]">
               <Compass size={64} className="mb-4 opacity-50" />
               <p>Configure your route and click calculate to see options.</p>
             </div>
           ) : calculating ? (
-            <div className="flex-1 flex flex-col items-center justify-center text-cyan-400">
+            <div className="flex-1 flex flex-col items-center justify-center text-cyan-400 min-h-[300px]">
               <Loader2 size={64} className="animate-spin mb-4" />
               <p>AI is analyzing weather, sea state, and geofences...</p>
             </div>
           ) : (
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6 flex-1 flex flex-col">
               <RouteComparison 
                 routes={dummyRoutes} 
                 recommendation="The Coastal Avoidance route is highly recommended. Although it adds 40 minutes to the journey, it entirely bypasses the active Naval training buffer zone and areas with currently elevated wave heights, reducing the risk score by 60%."
               />
               
-              <div className="mt-8">
+              <div className="mt-8 flex-1 min-h-[400px] flex flex-col">
                 <h3 className="text-xl font-bold text-white mb-4">Map View</h3>
-                <div className="w-full h-64 bg-slate-800 rounded-xl border border-white/10 flex items-center justify-center text-white/40">
-                  Interactive Map Component Placeholder
+                <div className="w-full flex-1 rounded-xl border border-white/10 relative overflow-hidden">
+                  <MapView />
                 </div>
               </div>
             </motion.div>

@@ -41,6 +41,7 @@ class PFZZone(BaseModel):
     sst: float
     chlorophyll: float
     distance_km: Optional[float] = None
+    radius_km: Optional[float] = None
     direction: Optional[str] = None
     weather_risk: Optional[str] = None
     sea_state: Optional[str] = None

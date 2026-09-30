@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Location } from '@/types';
 
-const DEFAULT_LOCATION: Location = { latitude: 19.076, longitude: 72.877, name: 'Mumbai (Default)' };
+const DEFAULT_LOCATION: Location = { latitude: 19.0, longitude: 72.5, name: 'Arabian Sea (Mumbai Offshore)' };
 
 export function useLocation() {
   const [location, setLocation] = useState<Location>(DEFAULT_LOCATION);

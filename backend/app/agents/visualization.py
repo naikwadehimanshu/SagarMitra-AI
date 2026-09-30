@@ -28,6 +28,7 @@ class VisualizationAgent:
                     "sst": zone.sst,
                     "chlorophyll": zone.chlorophyll,
                     "distance_km": zone.distance_km,
+                    "radius_km": zone.radius_km,
                     "direction": zone.direction,
                     "sea_state": zone.sea_state,
                     "weather_risk": zone.weather_risk,

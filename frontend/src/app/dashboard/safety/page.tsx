@@ -35,7 +35,7 @@ export default function SafetyCenterPage() {
   const totalScore = riskFactors.reduce((acc, curr) => acc + curr.score, 0);
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto">
+    <div className="space-y-6 max-w-7xl mx-auto h-full overflow-y-auto p-4 md:p-8 pb-24 custom-scrollbar w-full">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h1 className="text-3xl font-bold flex items-center gap-3">
           <Shield className="text-cyan-400" size={32} />

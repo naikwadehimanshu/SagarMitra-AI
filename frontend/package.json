@@ -1,5 +1,5 @@
 {
-  "name": "navik-ai",
+  "name": "orca",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sakitam-gis/maplibre-wind": "^2.0.3",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.400.0",

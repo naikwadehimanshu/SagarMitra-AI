@@ -35,30 +35,42 @@ export default function LandingPage() {
             Built for Smart India Hackathon
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            <span className="inline-block mr-4">🌊</span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-600">
-              Navik AI
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 flex flex-col items-center">
+            <div className="flex items-center">
+              <span className="inline-block mr-4">🌊</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-600">
+                ORCA
+              </span>
+            </div>
+            <span className="text-2xl md:text-3xl text-slate-200 mt-4 font-semibold max-w-3xl">
+              Marine EcOsystem Reasoning with Collaborative Agents
             </span>
           </h1>
           
-          <p className="text-2xl md:text-3xl font-medium text-slate-200 mb-4">
-            Ask the Ocean. Understand the Risk. Navigate Smarter.
-          </p>
-          
-          <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
-            Agentic AI-powered Marine Intelligence & Decision Support Platform for fishermen, maritime operators, and coastal authorities.
+          <p className="text-lg text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+            An Agentic AI-powered marine intelligence platform that transforms complex Earth Observation, oceanographic, weather, and geospatial data into explainable, actionable marine insights.
           </p>
 
-          <Link href="/dashboard">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-cyan-500 hover:bg-cyan-400 text-navy font-bold py-4 px-8 rounded-full text-lg flex items-center gap-2 mx-auto transition-colors shadow-[0_0_30px_rgba(0,212,255,0.3)] hover:shadow-[0_0_40px_rgba(0,212,255,0.5)]"
-            >
-              Launch Marine Intelligence <ArrowRight size={20} />
-            </motion.button>
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/dashboard">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-cyan-500 hover:bg-cyan-400 text-navy font-bold py-3 px-6 rounded-full text-lg flex items-center gap-2 transition-colors shadow-[0_0_30px_rgba(0,212,255,0.3)] hover:shadow-[0_0_40px_rgba(0,212,255,0.5)]"
+              >
+                Explore Marine Intelligence
+              </motion.button>
+            </Link>
+            <Link href="/dashboard/chat">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-3 px-6 rounded-full text-lg flex items-center gap-2 transition-colors"
+              >
+                Try ORCA AI <ArrowRight size={20} />
+              </motion.button>
+            </Link>
+          </div>
         </motion.div>
 
         <motion.div 

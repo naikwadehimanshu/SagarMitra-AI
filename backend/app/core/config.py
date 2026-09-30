@@ -3,7 +3,7 @@ from typing import List, Optional
 from pathlib import Path
 
 class Settings(BaseSettings):
-    APP_NAME: str = "SagarMitra AI"
+    APP_NAME: str = "ORCA"
     DEBUG: bool = False
     DEMO_MODE: bool = True
     
@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: Optional[str] = None
     GEMINI_API_KEY: Optional[str] = None
     
-    DATABASE_URL: str = "sqlite+aiosqlite:///./sagarmitra.db"
+    DATABASE_URL: str = "sqlite+aiosqlite:///./orca.db"
     REDIS_URL: Optional[str] = None
     
     OPEN_METEO_ENABLED: bool = True

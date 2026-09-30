@@ -53,9 +53,14 @@ export function ChatMessage({ message }: ChatMessageProps) {
         )}
 
         {!isUser && message.metadata && (
-          <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-400">
+          <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-400 items-center">
             <span>Sources: {message.metadata.source}</span>
             <span>Confidence: {message.metadata.confidence}%</span>
+            {message.metadata.data_mode === 'demo' && (
+              <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded text-[10px] font-bold tracking-wider uppercase ml-auto">
+                DEMO DATA
+              </span>
+            )}
           </div>
         )}
       </div>

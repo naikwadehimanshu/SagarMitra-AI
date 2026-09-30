@@ -11,6 +11,17 @@ const CITIES = [
   { value: 'chennai', label: 'Chennai' }, { value: 'visakhapatnam', label: 'Visakhapatnam' }
 ];
 
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
+
+const mockChartData = [
+  { time: '00:00', sst: 28.1, chlorophyll: 1.0 },
+  { time: '04:00', sst: 28.0, chlorophyll: 1.1 },
+  { time: '08:00', sst: 28.2, chlorophyll: 1.3 },
+  { time: '12:00', sst: 28.5, chlorophyll: 1.5 },
+  { time: '16:00', sst: 28.6, chlorophyll: 1.4 },
+  { time: '20:00', sst: 28.4, chlorophyll: 1.2 },
+];
+
 export default function MarineIntelligencePage() {
   const [loading, setLoading] = useState(true);
   const [city, setCity] = useState('mumbai');
@@ -22,7 +33,7 @@ export default function MarineIntelligencePage() {
   }, [city]);
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto">
+    <div className="space-y-6 max-w-7xl mx-auto h-full overflow-y-auto p-4 md:p-8 pb-24 custom-scrollbar w-full">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h1 className="text-3xl font-bold flex items-center gap-3">
           <Satellite className="text-cyan-400" size={32} />
@@ -99,6 +110,26 @@ export default function MarineIntelligencePage() {
             </div>
           )}
         </div>
+      </div>
+
+      {/* Historical Trends Chart */}
+      <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 mt-6">
+        <h2 className="text-xl font-bold text-white mb-6">24h Historical Trends</h2>
+        {loading ? <Skeleton height={300} /> : (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="h-[300px] w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={mockChartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+                <XAxis dataKey="time" stroke="#94a3b8" />
+                <YAxis yAxisId="left" stroke="#38bdf8" label={{ value: 'SST (°C)', angle: -90, position: 'insideLeft', fill: '#38bdf8' }} />
+                <YAxis yAxisId="right" orientation="right" stroke="#4ade80" label={{ value: 'Chlorophyll (mg/m³)', angle: -90, position: 'insideRight', fill: '#4ade80' }} />
+                <Tooltip contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b' }} />
+                <Line yAxisId="left" type="monotone" dataKey="sst" stroke="#38bdf8" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 8 }} />
+                <Line yAxisId="right" type="monotone" dataKey="chlorophyll" stroke="#4ade80" strokeWidth={3} dot={{ r: 4 }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </motion.div>
+        )}
       </div>
     </div>
   );

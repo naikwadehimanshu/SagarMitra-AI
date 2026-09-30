@@ -11,7 +11,7 @@ router = APIRouter(tags=["Layers"])
 
 
 @router.get("/layers")
-async def get_layers(latitude: float = 19.076, longitude: float = 72.877):
+async def get_layers(latitude: float = 19.0, longitude: float = 72.5):
     """Get all available map layers for a location."""
     viz = VisualizationAgent()
     marine = MarineAgent()
@@ -53,51 +53,31 @@ async def get_layers(latitude: float = 19.076, longitude: float = 72.877):
 @router.get("/data-sources")
 async def get_data_sources():
     """List all configured data sources and their status."""
+    from app.data_sources import (
+        IncoisPFZSource,
+        MosdacSource,
+        CmemsSource,
+        ImdMausamSource,
+        OpenMeteoMarineSource,
+        MarineRegionsSource
+    )
+    
+    # Initialize sources
+    sources = [
+        IncoisPFZSource(),
+        MosdacSource(),
+        CmemsSource(),
+        ImdMausamSource(),
+        OpenMeteoMarineSource(),
+        MarineRegionsSource()
+    ]
+    
+    results = []
+    for source in sources:
+        info = source.get_source_info()
+        info["health"] = "healthy" if source.health_check() else "unreachable"
+        results.append(info)
+        
     return {
-        "sources": [
-            {
-                "name": "Open-Meteo Weather",
-                "type": "weather",
-                "status": "active",
-                "mode": "live",
-                "url": "https://api.open-meteo.com",
-                "description": "Free weather forecast API — no key required",
-            },
-            {
-                "name": "INCOIS PFZ Data",
-                "type": "marine",
-                "status": "demo",
-                "mode": "demo",
-                "description": "Potential Fishing Zone data (simulated for hackathon)",
-            },
-            {
-                "name": "Ocean Observations",
-                "type": "ocean",
-                "status": "demo",
-                "mode": "demo",
-                "description": "SST, chlorophyll, wave, and current data (simulated)",
-            },
-            {
-                "name": "Marine Weather (Open-Meteo)",
-                "type": "marine_weather",
-                "status": "active",
-                "mode": "live",
-                "url": "https://marine-api.open-meteo.com",
-                "description": "Marine wave and swell data",
-            },
-            {
-                "name": "Maritime Boundaries",
-                "type": "geospatial",
-                "status": "active",
-                "mode": "demo",
-                "description": "Restricted zones, protected areas, and boundaries (GeoJSON)",
-            },
-            {
-                "name": "IMD Cyclone Warnings",
-                "type": "alerts",
-                "status": "demo",
-                "mode": "demo",
-                "description": "India Meteorological Department alerts (simulated)",
-            },
-        ]
+        "sources": results
     }

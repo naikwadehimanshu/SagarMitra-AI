@@ -16,6 +16,9 @@ async def chat_endpoint(request: ChatRequest):
         response = await process_query(request)
         return response
     except Exception as e:
+        import traceback
+        with open("crash_log.txt", "w") as f:
+            f.write(traceback.format_exc())
         logger.error("Chat processing failed: %s", e, exc_info=True)
         raise HTTPException(status_code=500, detail=f"Processing error: {str(e)}")
 

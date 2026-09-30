@@ -28,16 +28,18 @@ export function PFZCard({ zone }: PFZCardProps) {
       </div>
 
       <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
-        <div className="bg-black/20 p-2 rounded-lg">
+        <div className="bg-black/20 p-2 rounded-lg overflow-hidden">
           <span className="text-slate-400 text-xs block mb-1">SST</span>
-          <span className="flex items-center gap-1 text-slate-200">
-            <Thermometer size={14} className="text-red-400"/> {zone.sst}°C
+          <span className="flex items-center gap-1 text-slate-200 truncate">
+            <Thermometer size={14} className="text-red-400 shrink-0"/> 
+            {typeof zone.sst === 'number' ? zone.sst.toFixed(1) : zone.sst}°C
           </span>
         </div>
-        <div className="bg-black/20 p-2 rounded-lg">
+        <div className="bg-black/20 p-2 rounded-lg overflow-hidden">
           <span className="text-slate-400 text-xs block mb-1">Chlorophyll</span>
-          <span className="flex items-center gap-1 text-slate-200">
-            <Info size={14} className="text-green-400"/> {zone.chlorophyll} mg/m³
+          <span className="flex items-center gap-1 text-slate-200 truncate">
+            <Info size={14} className="text-green-400 shrink-0"/> 
+            {typeof zone.chlorophyll === 'number' ? zone.chlorophyll.toFixed(2) : zone.chlorophyll} mg/m³
           </span>
         </div>
       </div>
